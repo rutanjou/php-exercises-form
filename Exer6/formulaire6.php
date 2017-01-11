@@ -1,9 +1,3 @@
-<?php 
-if (isset ($_GET['genre']) && ($_GET['nom']) && ($_GET['prenom'])){
-	echo "Bonjour " .$_GET['genre'] .$_GET['nom'] .$_GET['prenom'] ." . " ;
-
-}
- ?>
 <!DOCTYPE html>
  <html lang="en">
  <head>
@@ -11,11 +5,12 @@ if (isset ($_GET['genre']) && ($_GET['nom']) && ($_GET['prenom'])){
  	<title>Formulaire6</title>
  </head>
  <body>
-
+<?php  if(empty($_GET))	{
+?>
  	<form method="GET" action="">
  	<select name="genre">
-    <option>Mr</option>
-    <option>Mme</option>
+    <option >Mr</option>
+    <option >Mme</option>
     </select>
  		<label for="nom">Nom: </label>
  		<input type="text" name="nom">
@@ -23,5 +18,14 @@ if (isset ($_GET['genre']) && ($_GET['nom']) && ($_GET['prenom'])){
  		<input type="text" name="prenom">
  		<input type="submit" value="Envoyer">
  	</form>
+<?php 
+}
+if (isset ($_GET['genre']) && ($_GET['nom']) && ($_GET['prenom'])){
+	echo "Bonjour " .$_GET['genre'] ." ".$_GET['nom'] ." ".$_GET['prenom'] ." . " ;
+
+}
+ ?>
+ 
+
  </body>
  </html>
